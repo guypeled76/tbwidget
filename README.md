@@ -1,2 +1,2 @@
 # tbwidget
-Taboola widget
+Taboola widget (v1)
