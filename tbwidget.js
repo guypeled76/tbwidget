@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 
 /**
  * Provides support for integrating tb widgets 
@@ -57,10 +58,10 @@ class TBWidget {
                     response.json().then((data) => {
                         this.buildWidget(div, data);
                     }).catch((reason) =>{
-                        alert(reason);
+                        this.logError("Failed to parse widget data", reason);
                     });
                 }).catch((reason) => {
-                    alert(reason);
+                    this.logError("Failed to load widget data", reason);
                 });
             }
         });
@@ -93,5 +94,14 @@ class TBWidget {
         } else {
 
         }
+    }
+
+    /**
+     * Log widget error
+     * @param {string} message 
+     * @param {string} reason 
+     */
+    logError(message, reason) {
+        console.log("ERROR:" + message + "[reason="+reason+"]");
     }
 }
