@@ -20,7 +20,18 @@
 
         <div id="tbwidget_container">
             <script>
-                tbwidget.register("tbwidget_container","video", 6);
+                tbwidget.register("tbwidget_container","video", 6, function(item){
+                    return "<div class='tbitem' style='border:1px solid red'>" +
+                        "<a href='"+item.url+"' target='_blank'>" +
+                            "<div class='tbimage' style='background-image:url(\"" + item.thumbnail +"\")'>" +
+                            "</div>" +
+                            "<div class='tblabel'>" +
+                                item.name +
+                            "</div>" +
+                            "</div>" +
+                        "</a>" +
+                    "</div>"
+                });
             </script>
         </div>
 
