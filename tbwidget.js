@@ -41,7 +41,14 @@ class TBWidget {
             count:count,
             template:template
         };
+
         this.containers.push(info);
+
+        // Enable users to react to changes in widget
+        return new Promise(function(resolved, rejected) {
+            info.resolved = resolved;
+            info.rejected = rejected;
+        });
     }
 
     /**
@@ -53,16 +60,16 @@ class TBWidget {
             if(div) {
                 fetch(this.buildUrl(info)).then((response) => {
                     response.json().then((data) => {
-                        this.buildWidget(div, data, info.template);
+                        this.buildWidget(div, data, info.template, info.resolved);
                     }).catch((reason) =>{
-                        this.logError("Failed to parse widget '"+info.container+"' data", reason);
+                        this.logError("Failed to parse widget '"+info.container+"' data", reason, info.rejected);
                     });
                 }).catch((reason) => {
-                    this.logError("Failed to load widget '"+info.container+"'  data", reason);
+                    this.logError("Failed to load widget '"+info.container+"'  data", reason, info.rejected);
                 });
             }
             else {
-                this.logError("Failed to find widget container element '"+info.container+"'", reason);
+                this.logError("Failed to find widget container element '"+info.container+"'", reason, info.rejected);
             }
         });
     }
@@ -83,7 +90,7 @@ class TBWidget {
      * @param {element} div 
      * @param {json} data 
      */
-    buildWidget(div, data, template){
+    buildWidget(div, data, template, resolved){
         var list = data.list;
         if(list) {
             var content = '';
@@ -91,9 +98,10 @@ class TBWidget {
                 content += template(this.buildItemInfo(item));
             });
             div.innerHTML = content;
-        } else {
 
-        }
+            // If we need to resolve the widget promise
+            if(resolved) resolved();
+        } 
     }
 
     /**
@@ -130,7 +138,9 @@ class TBWidget {
      * @param {string} message 
      * @param {string} reason 
      */
-    logError(message, reason) {
-        console.log("ERROR:" + message + "[reason="+reason+"]");
+    logError(message, reason, rejected) {
+        var text = "ERROR:" + message + "[reason="+reason+"]";
+        console.log(text);
+        if(rejected) rejected(text);
     }
 }

@@ -18,7 +18,7 @@
             </script>
         </div>
 
-        <div id="tbwidget_container">
+        <div id="tbwidget_container" style="display:none">
             <script>
                 tbwidget.register("tbwidget_container","video", 6, function(item){
                     return "<div class='tbitem' style='border:1px solid red'>" +
@@ -31,6 +31,8 @@
                             "</div>" +
                         "</a>" +
                     "</div>"
+                }).then(function(){
+                    tbwidget_container.style.display = "block";
                 });
             </script>
         </div>
