@@ -61,6 +61,9 @@ class TBWidget {
                     this.logError("Failed to load widget '"+info.container+"'  data", reason);
                 });
             }
+            else {
+                this.logError("Failed to find widget container element '"+info.container+"'", reason);
+            }
         });
     }
 
