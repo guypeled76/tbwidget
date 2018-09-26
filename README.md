@@ -18,6 +18,7 @@ Design Goals:
      polyfilling and transpaling will work for older browsers.
 5. Accound for cross domain communication by using CROS protocol or by implementing 
    script tag creation communication for older browsers.
+6. Allow actions to be executed after widget building or widget loading failure.
 
 
 Implementation Details:
@@ -30,3 +31,5 @@ Implementation Details:
 6. Errors will be logged to the console 
 7. Modern browsers has optimize string concatination memory allocation while older browsers 
    where more performant using Array.join. 
+8. Register widget should return a promise to allow actions to be executed 
+   after widget building or widget loading failure.
