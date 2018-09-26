@@ -12,18 +12,21 @@
     </head>
     <body>
 
-        <div id="tbwidget_side">
+        <div id="tbwidget_side" class="tbcontainer">
             <script>
-                tbwidget.register("tbwidget_side","video", 6);
+                tbwidget.register("tbwidget_side","video", 6).then(function(element){
+                    element.style.display = "block";
+                });
             </script>
         </div>
 
-        <div id="tbwidget_container" style="display:none">
+        <div id="tbwidget_container"  class="tbcontainer">
             <script>
                 tbwidget.register("tbwidget_container","video", 6, function(item){
-                    return "<div class='tbitem' style='border:1px solid red'>" +
+                    return "<div class='tbitem'>" +
                         "<a href='"+item.url+"' target='_blank'>" +
                             "<div class='tbimage' style='background-image:url(\"" + item.thumbnail +"\")'>" +
+                                "<span class='tbbranding'>"+item.branding+"</span>" +
                             "</div>" +
                             "<div class='tblabel'>" +
                                 item.name +
@@ -31,8 +34,8 @@
                             "</div>" +
                         "</a>" +
                     "</div>"
-                }).then(function(){
-                    tbwidget_container.style.display = "block";
+                }).then(function(element){
+                    element.style.display = "block";
                 });
             </script>
         </div>

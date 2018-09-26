@@ -100,7 +100,7 @@ class TBWidget {
             div.innerHTML = content;
 
             // If we need to resolve the widget promise
-            if(resolved) resolved();
+            if(resolved) resolved(div);
         } 
     }
 
@@ -112,7 +112,8 @@ class TBWidget {
         return {
             url:item.url,
             thumbnail:item.thumbnail[0].url,
-            name:item.name
+            name:item.name,
+            branding:item.branding
         };
     }
 
