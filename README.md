@@ -1,7 +1,6 @@
 # tbwidget
 Taboola widget 
 
-test
 Design Goals:
 ==========================
 1. Hide implementation details and provide simple APIs while allowing customizations.
