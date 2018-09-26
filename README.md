@@ -28,4 +28,5 @@ Implementation Details:
 4. Registering a widget should allow for customizing the item template.
 5. Hide JSON structure from the client by hiding internal structure of the data
 6. Errors will be logged to the console 
-7. Modern browsers has optimize string concatination memory allocation while older browsers where more performant using Array.join. 
+7. Modern browsers has optimize string concatination memory allocation while older browsers 
+   where more performant using Array.join. 
