@@ -3,7 +3,7 @@
 /**
  * Provides support for integrating tb widgets 
  */
-class TBWidget {
+class TBWidget { 
 
     /**
      * Initialize the widget integration manager
