@@ -16,6 +16,10 @@ Design Goals:
    - 74% of modern browsers are evergreen (automaticly updated) which means that
      utilizing new browser features is a good practice for most of the users while
      polyfilling and transpaling will work for older browsers.
+   - Automatic usage of "right" version might hinder 'CDN' capabilities as it will
+     require server side forking and as the code is relativly simple we might do 
+     with serving es5 for all browsers or providing diffrent resources and allow sites
+     to descide which resource they want to use. 
 5. Accound for cross domain communication by using CROS protocol or by implementing 
    script tag creation communication for older browsers.
 6. Allow actions to be executed after widget building or widget loading failure.
