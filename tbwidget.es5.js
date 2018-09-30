@@ -38,7 +38,7 @@ var TBWidget = function () {
         key: "register",
         value: function register(container, type, count, template) {
 
-            // Ensure there is a default item tempate
+            // Ensure there is a default item template
             if (!template) template = this.buildItem;
 
             // The widget info
