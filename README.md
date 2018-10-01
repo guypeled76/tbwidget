@@ -6,7 +6,7 @@ A recommendation widget using the Taboola REST API.
 1. Hide implementation details and provide simple APIs while allowing customization.
 2. Optimize for performance
     - Used build method at end of html to queue widget building as soon as possible.
-    - Use minimum interaction with browser DOM
+    - Use minimum interaction with browser`s DOM
         - Utilized getElementByID which is O(1)
         - Used innerHTML to allow browser to build the entire widget with one API call.
 3. Allow customization by providing a template function argument to custom render 
