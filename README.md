@@ -31,10 +31,11 @@ Taboola widget
 3. Each widget should be registered with minimum code while keeping performance as a priority. 
 4. Registering a widget should allow for customizing the item template.
 5. Hide JSON structure from the client by hiding internal structure of the data
-6. Errors will be logged to the console 
-7. Modern browsers has optimize string concatenation memory allocation while older browsers 
-   where more performant using Array.join. 
-8. Register widget should return a promise to allow actions to be executed 
+6. Errors will be logged to the console and through promises returned by the TBWidget.register method.
+7. Modern browsers has optimized string concatenation memory allocation while older browsers 
+   where more performant using Array.join.  
+8. To minimize DOM interaction to provide for high performance the widget will be built entirely as string on the javascript side and then used in one DOM interaction to initialize the innerHTML of the widget container element.
+9. Register widget should return a promise to allow actions to be executed 
    after widget building or widget loading failure.
 
 ## Usage:
