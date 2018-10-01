@@ -1,5 +1,6 @@
-# tbwidget
-Taboola widget 
+# Taboola widget 
+
+A recommendation widget using the Taboola REST API.
 
 ## Design Goals:
 1. Hide implementation details and provide simple APIs while allowing customization.
