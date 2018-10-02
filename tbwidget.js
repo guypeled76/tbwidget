@@ -122,11 +122,11 @@ class TBWidget {
      * @param {object} item 
      */
     buildItem(item) {
-        return  "<div class='tbitem'>" +
+        return  "<div class='tb-item'>" +
                     "<a href='"+item.url+"' target='_blank'>" +
-                        "<div class='tbimage' style='background-image:url(\"" + item.thumbnail +"\")'>" +
+                        "<div class='tb-item-image' style='background-image:url(\"" + item.thumbnail +"\")'>" +
                         "</div>" +
-                        "<div class='tblabel'>" +
+                        "<div class='tb-item-label'>" +
                             item.name +
                         "</div>" +
                         "</div>" +

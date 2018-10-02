@@ -1,47 +1,57 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="site.css">
-        <script src="tbwidget.es5.js"></script>
-        <script>
-            var tbwidget = new TBWidget(
-                "taboola-templates",
-                "desktop",
-                "f9040ab1b9c802857aa783c469d0e0ff7e7366e4"
-            );
-        </script>
-    </head>
-    <body>
 
-        <div id="tbwidget_side" class="tbcontainer">
+<head>
+    <link rel="stylesheet" type="text/css" href="site.css">
+    <script src="tbwidget.es5.js"></script>
+    <script>
+        var tbwidget = new TBWidget(
+            "taboola-templates",
+            "desktop",
+            "f9040ab1b9c802857aa783c469d0e0ff7e7366e4"
+        );
+    </script>
+</head>
+
+<body>
+
+    <div id="tb_recommendations_box" class="tb-box">
+        <div class="tb-title">Recommendations:</div>
+        <div id="tb_recommendations" class="tb-content">
             <script>
-                tbwidget.register("tbwidget_side","video", 6).then(function(element){
-                    element.style.display = "block";
+                tbwidget.register("tb_recommendations", "video", 9).then(function () {
+                    tb_recommendations_box.style.display = "block";
                 });
             </script>
         </div>
-
-        <div id="tbwidget_container"  class="tbcontainer">
+    </div>
+    <br/>
+    <div id="tb_more_recommendations_box" class="tb-box">
+        <div class="tb-title">More Recommendations:</div>
+        <div id="tbwidget_container" class="tb-content">
             <script>
-                tbwidget.register("tbwidget_container","video", 6, function(item){
-                    return "<div class='tbitem'>" +
-                        "<a href='"+item.url+"' target='_blank'>" +
-                            "<div class='tbimage' style='background-image:url(\"" + item.thumbnail +"\")'>" +
-                                "<span class='tbbranding'>"+item.branding+"</span>" +
-                            "</div>" +
-                            "<div class='tblabel'>" +
-                                item.name +
-                            "</div>" +
-                            "</div>" +
+                tbwidget.register("tbwidget_container", "video", 6, function (item) {
+                    return "<div class='tb-item'>" +
+                        "<a href='" + item.url + "' target='_blank'>" +
+                        "<div class='tb-item-image' style='background-image:url(\"" + item.thumbnail + "\")'>" +
+                        "</div>" +
+                        "<div class='tb-item-label'>" +
+                        item.name +
+                        "</div>" +
+                        "</div>" +
                         "</a>" +
-                    "</div>"
-                }).then(function(element){
-                    element.style.display = "block";
+                        "</div>"
+                }).then(function (element) {
+                    tb_more_recommendations_box.style.display = "block";
                 });
             </script>
         </div>
+    </div>
 
-        <script>
-            tbwidget.build();
-        </script>
-    </body>
+
+
+    <script>
+        tbwidget.build();
+    </script>
+</body>
+
 </html>

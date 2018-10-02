@@ -144,7 +144,7 @@ var TBWidget = function () {
     }, {
         key: "buildItem",
         value: function buildItem(item) {
-            return "<div class='tbitem'>" + "<a href='" + item.url + "' target='_blank'>" + "<div class='tbimage' style='background-image:url(\"" + item.thumbnail + "\")'>" + "</div>" + "<div class='tblabel'>" + item.name + "</div>" + "</div>" + "</a>" + "</div>";
+            return "<div class='tb-item'>" + "<a href='" + item.url + "' target='_blank'>" + "<div class='tb-item-image' style='background-image:url(\"" + item.thumbnail + "\")'>" + "</div>" + "<div class='tb-item-label'>" + item.name + "</div>" + "</div>" + "</a>" + "</div>";
         }
 
         /**
