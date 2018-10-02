@@ -38,6 +38,7 @@ A recommendation widget using the Taboola REST API.
 8. To minimize DOM interaction to provide for high performance the widget will be built entirely as string on the javascript side and then used in one DOM interaction to initialize the innerHTML of the widget container element.
 9. Register widget should return a promise to allow actions to be executed 
    after widget building or widget loading failure.
+10. The code is written in ES6 and there is a task that generates the ES5 code. The sample HTML works with the ES5 version. Profiling can be added if we need to support even older browsers, mainly for the _fetch_ method and the _Promise_ usage.
 
 ## Usage:
 
