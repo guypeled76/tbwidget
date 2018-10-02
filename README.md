@@ -114,3 +114,10 @@ The desktop layout:
 The mobile layout:
 
 ![The mobile layout](images/mobile_layout.png "mobile layout")
+
+## Source Files:
+
+* _tbwidget.js_ - ES6 implementation of the JS TBWidget library.
+* _tbwidget.es5.js_ - ES5 implementation of the JS TBWidget library (generated running the build task). 
+* _site.html_ - Sample HTML usage of the library.
+* _site.css_ - Sample CSS usage of the library. By default the TBWidget generates HTML with these classes.
