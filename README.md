@@ -105,10 +105,12 @@ For the widgets to be populated you need to call the build function at the end o
 ```
 ## Responsive web design:
 
-The actual widget is agnostic to the form factor of the client and all the changes are handled by the client. In this case there the _site.css_ has a conditional definition to accommodate for different form factors.
+The actual widget is agnostic to the form factor and renders the same HTML for all form factors. The styles in _site.css_ are written to conditionally display different layout for different form factors.
 
 The desktop layout:
+
 ![The desktop layout](images/desktop_layout.png "desktop layout")
 
 The mobile layout:
+
 ![The mobile layout](images/mobile_layout.png "mobile layout")
