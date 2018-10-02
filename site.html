@@ -31,15 +31,15 @@
             <script>
                 tbwidget.register("tbwidget_container", "video", 6, function (item) {
                     return "<div class='tb-item'>" +
-                        "<a href='" + item.url + "' target='_blank'>" +
-                        "<div class='tb-item-image' style='background-image:url(\"" + item.thumbnail + "\")'>" +
-                        "</div>" +
-                        "<div class='tb-item-label'>" +
-                        item.name +
-                        "</div>" +
-                        "</div>" +
-                        "</a>" +
-                        "</div>"
+                                "<a href='" + item.url + "' target='_blank'>" +
+                                    "<div class='tb-item-image' style='background-image:url(\"" + item.thumbnail + "\")'>" +
+                                    "</div>" +
+                                    "<div class='tb-item-label'>" +
+                                    item.name +
+                                    "</div>" +
+                                    "</div>" +
+                                "</a>" +
+                            "</div>"
                 }).then(function (element) {
                     tb_more_recommendations_box.style.display = "block";
                 });
