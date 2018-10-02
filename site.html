@@ -18,7 +18,7 @@
         <div class="tb-title">Recommendations:</div>
         <div id="tb_recommendations" class="tb-content">
             <script>
-                tbwidget.register("tb_recommendations", "video", 9).then(function () {
+                tbwidget.register("tb_recommendations", "video", 6).then(function () {
                     tb_recommendations_box.style.display = "block";
                 });
             </script>
@@ -29,7 +29,7 @@
         <div class="tb-title">More Recommendations:</div>
         <div id="tbwidget_container" class="tb-content">
             <script>
-                tbwidget.register("tbwidget_container", "video", 6, function (item) {
+                tbwidget.register("tbwidget_container", "video", 9, function (item) {
                     return "<div class='tb-item'>" +
                                 "<a href='" + item.url + "' target='_blank'>" +
                                     "<div class='tb-item-image' style='background-image:url(\"" + item.thumbnail + "\")'>" +
